@@ -1,6 +1,11 @@
 # badservice
 Helps you test how resilient you are generating bad HTTP responses.
 
+## Listening port
+By default, `badservice` binds to 0.0.0.0:6666
+
+This value can be changed setting `BADSERVICE_BINDADDR` environment variable to one of your preference.
+
 ## Status Code
 `/badservice/status/:code`
 Will response a `code` HTTP status code.
