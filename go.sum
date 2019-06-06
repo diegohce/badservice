@@ -1,0 +1,4 @@
+github.com/diegohce/logger v0.1.1 h1:HlWF587MZML5pnohuHTdWNig5s57prt6nMyIgNeLeCI=
+github.com/diegohce/logger v0.1.1/go.mod h1:JXLCLsqp275cVd6/o+Veoy2RD3TJi4XG/wlq1SK8erU=
+github.com/julienschmidt/httprouter v1.2.0 h1:TDTW5Yz1mjftljbcKqRcrYhd4XeOoI98t+9HbQbYf7g=
+github.com/julienschmidt/httprouter v1.2.0/go.mod h1:SYymIcj16QtmaHHD7aYtjjsJG7VTCxuUUipMqKk8s4w=
