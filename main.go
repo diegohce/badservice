@@ -25,10 +25,12 @@ func main() {
 	router.GET("/badservice/drop", dropConnectionHandler)
 	router.GET("/badservice/status/:code", statusCodeHandler)
 	router.GET("/badservice/delay/:delay", delayHandler)
+	router.GET("/badservice/headers", showHeadersHandler)
 
 	router.POST("/badservice/drop", dropConnectionHandler)
 	router.POST("/badservice/status/:code", statusCodeHandler)
 	router.POST("/badservice/delay/:delay", delayHandler)
+	router.POST("/badservice/headers", showHeadersHandler)
 
 	log.Info().Println("Starting badservice on", bindAddr)
 

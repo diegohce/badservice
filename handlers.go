@@ -67,3 +67,11 @@ func dropConnectionHandler(w http.ResponseWriter, r *http.Request, _ httprouter.
 	conn.Close()
 }
 
+func showHeadersHandler(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
+	log.Info().Printf("Incomming request %s from %s\n", r.URL, r.RemoteAddr)
+
+	log.Info().Printf("%+v\n", r.Header)
+
+	fmt.Fprintf(w, "%+v\n", r.Header)
+}
+
