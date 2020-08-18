@@ -32,8 +32,17 @@ func main() {
 	router.POST("/badservice/delay/:delay", delayHandler)
 	router.POST("/badservice/headers", showHeadersHandler)
 
+	router.PUT("/badservice/drop", dropConnectionHandler)
+	router.PUT("/badservice/status/:code", statusCodeHandler)
+	router.PUT("/badservice/delay/:delay", delayHandler)
+	router.PUT("/badservice/headers", showHeadersHandler)
+
+	router.DELETE("/badservice/drop", dropConnectionHandler)
+	router.DELETE("/badservice/status/:code", statusCodeHandler)
+	router.DELETE("/badservice/delay/:delay", delayHandler)
+	router.DELETE("/badservice/headers", showHeadersHandler)
+
 	log.Info().Println("Starting badservice on", bindAddr)
 
 	log.Error().Fatal(http.ListenAndServe(bindAddr, router))
 }
-
