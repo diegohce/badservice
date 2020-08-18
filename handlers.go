@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"net/http"
 	"strconv"
 	"time"
@@ -45,6 +46,11 @@ func statusCodeHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Par
 		}
 	}()
 	w.WriteHeader(statusCode)
+
+	if r.ContentLength > 0 {
+		io.Copy(w, r.Body)
+	}
+
 }
 
 func dropConnectionHandler(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
@@ -74,4 +80,3 @@ func showHeadersHandler(w http.ResponseWriter, r *http.Request, _ httprouter.Par
 
 	fmt.Fprintf(w, "%+v\n", r.Header)
 }
-
